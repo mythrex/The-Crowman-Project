@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "",
+  "version": "",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-hbs": "^1.0.4",
+    "hbs": "^4.0.1",
+    "pg": "^7.0.2",
+    "sequelize": "^4.4.2",
+    "sequelize-cli": "^2.7.0"
+  }
+}
