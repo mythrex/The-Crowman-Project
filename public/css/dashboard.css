@@ -12,7 +12,6 @@
     width: 260px;
     display: flex;
     flex-direction: column; }
-
   .sidebar-wrapper {
     flex: 1; }
     .sidebar-wrapper .logo {
@@ -27,13 +26,12 @@
         text-align: center;
         padding: 5px; }
         .sidebar-wrapper .nav li:hover {
-          background: #f8b8b8; }
+          background: #ef5b5b; }
         .sidebar-wrapper .nav li a:hover {
           text-decoration: none; }
       .sidebar-wrapper .nav .active {
         background: #4a5175;
         border-right: 15px solid #ef5b5b; }
-
   .sidebar-footer {
     height: auto;
     text-align: center;
@@ -41,8 +39,10 @@
     padding-bottom: 20px;
     background: #4a5175;
     color: White; } }
+
 .nav-item .dropdown #messages:hover {
   color: #ef5b5b; }
+
 .nav-item .dropdown .dropdown-menu {
   position: absolute;
   right: 0;
@@ -81,5 +81,3 @@
     padding: 10px;
     background-color: #f1f1f1;
     overflow-y: auto; }
-
-/*# sourceMappingURL=dashboard.css.map */

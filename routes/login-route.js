@@ -4,7 +4,9 @@ const router = express.Router();
 
 
 router.get('/admin', (req, res) => {
-  res.render('admin',{layout: 'dashboard'});
+  res.render('admin',{
+    layout: 'dashboard',
+    customers: 'active'});
 });
 
 router.get('/customer', (req, res) => {

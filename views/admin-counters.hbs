@@ -1,0 +1,75 @@
+
+{{#if type}}
+  <div class="alert alert-{{type}}" role="alert">
+    {{message}}
+  </div>
+{{/if}}
+<div class="row">
+  <!--add a counter-->
+  <div class="col-12 col-sm-6">
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Add a Counter</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Fill in the details to add a Counter</h6>
+
+          <form id="addCount" action="addCount" method="post">
+            <div class="form-group">
+              <label for="addCount-name">Name</label>
+              <input name="addCount-name" type="text" class="form-control" id="addCount-name" placeholder="Counter Name">
+            </div>
+            <div class="form-group">
+              <label for="addCount-desc">Description:</label>
+              <textarea name="addCount-desc"type="text" class="form-control" id="addCount-desc" placeholder="Add some description..." rows="3"></textarea>
+            </div>
+            <button id="addCount-submit" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+      </div>
+    </div>
+  </div>
+  <!--add a counter-->
+  <div class="col-12 col-sm-6">
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Delete a Counter</h4>
+          <form id="deleteCount" action="/admin/deleteCount" method="post">
+            <div class="form-group">
+              <label for="deleteCount-name">ID</label>
+              <input name="id" type="text" class="form-control" id="deleteCount-id" placeholder="ID of counter to be deleted">
+            </div>
+            <button id="deleteCount-submit" type="submit" class="btn btn-danger">Submit</button>
+          </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <h2>Showing Counters</h2>
+        </div>
+        <div class="card-text counter-container">
+
+          {{#if array}}
+            {{#each array}}
+            <div class="counter" data-id = {{this.id}} data-toggle="tooltip" data-placement="top" title="id: {{this.id}}; Description: {{this.counterDescription}}">
+                <div class="counter-name">
+                {{this.counterName}}
+              </div>
+            </div>
+            {{/each}}
+          {{/if}}
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

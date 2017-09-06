@@ -1,6 +1,5 @@
-@charset "UTF-8";
 body {
-  font-family: Roboto, sans-serif; }
+  font-family: Roboto,sans-serif; }
 
 a {
   color: #7a82ab; }
@@ -43,7 +42,7 @@ label {
   label input[type=checkbox] {
     display: none; }
     label input[type=checkbox] + .label-text::before {
-      content: "";
+      content: "\f096";
       font-family: "FontAwesome";
       speak: none;
       font-style: normal;
@@ -56,14 +55,14 @@ label {
       margin-right: 5px;
       color: #ef5b5b; }
     label input[type=checkbox]:checked + .label-text::before {
-      content: ""; }
+      content: "\f14a"; }
     label input[type=checkbox]:disabled + .label-text::before {
-      content: "";
+      content: "\f096";
       color: #f8b8b8; }
   label input[type=radio] {
     display: none; }
     label input[type=radio] + .label-text::before {
-      content: "";
+      content: "\f1db";
       font-family: "FontAwesome";
       speak: none;
       font-style: normal;
@@ -76,9 +75,9 @@ label {
       margin-right: 5px;
       color: #ef5b5b; }
     label input[type=radio]:checked + .label-text::before {
-      content: ""; }
+      content: "\f192"; }
     label input[type=radio]:disabled + .label-text::before {
-      content: "";
+      content: "\f1db";
       color: #f8b8b8; }
 
 .badge-default {
@@ -154,4 +153,11 @@ label {
   .modal-dialog .modal-content .modal-header .close {
     color: White; }
 
-/*# sourceMappingURL=style.css.map */
+.counter {
+  background: #ef5b5b;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  color: White;
+  cursor: pointer; }

@@ -6,6 +6,8 @@ const db = require('../db.js');
 const Customers = db.Customers;
 const Banks = db.Banks;
 
+
+
 router.post('/addCust', (req, res) => {
   Customers.create({
     name: req.body.name,
@@ -61,15 +63,19 @@ router.post('/removeCust', (req, res) => {
       Customers.destroy({
         where: {id: id}
       }).then((customer) => {
-        res.send({success: true});
+        console.log(customer);
+        if(customer != 0)
+          res.send({success: true});
+        else
+        res.send({success: false});
       }).catch((err) => {
         throw err;
       })
 
     }).catch((err) => {
-      res.send({success: false});
       throw err;
     });
+
 });
 
 router.get('/findCustDetails', (req, res) => {
@@ -96,12 +102,14 @@ router.get('/findCustDetails', (req, res) => {
       }else {
         res.render('admin',{
           noDetails: 'No Details for such ID',
-          layout: 'dashboard'
+          layout: 'dashboard',
+          customers: 'active'
         });
       }
     }).catch((err) => {
       throw err;
     });
 });
+
 
 module.exports = router;

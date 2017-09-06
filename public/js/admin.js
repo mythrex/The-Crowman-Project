@@ -97,8 +97,11 @@ $(function () {
   $('#removeCust-remove').click(function(event) {
     let id = +$('#removeCust-id').val();
     $.post('/removeCust', {id: id}, function(data, textStatus, xhr) {
+      console.log(data.success);
       if(data.success){
         makeAlert('danger','Successfully deleted customer!');
+      }else {
+        makeAlert('primary','Id specified is not found!');
       }
     });
     resetForm('#removeCust');
@@ -107,6 +110,4 @@ $(function () {
     resetForm('#removeCust')
   });
 
-  //for showing details
-  // $('#findCustDetails-search').click(findCustomerDetails);
 })

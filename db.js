@@ -69,9 +69,30 @@ const customers = db.define('customers',{
   },
 });
 
+//bank table
+const counters = db.define('counters',{
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  counterName: {
+    type: Sequelize.STRING,
+    unique: true,
+    allowNull: false
+  },
+  counterDescription: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  }
+});
+
 //associations
 banks.hasMany(customers);
 customers.belongsTo(banks);
+
+banks.hasMany(counters);
+counters.belongsTo(banks);
 
 db.sync().then(() => {
   console.log("connected to db");
@@ -82,5 +103,6 @@ db.sync().then(() => {
 module.exports = {
   Admins: admins,
   Banks: banks,
-  Customers: customers
+  Customers: customers,
+  Counters: counters
 };
