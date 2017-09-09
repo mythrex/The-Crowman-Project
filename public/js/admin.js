@@ -31,7 +31,7 @@ function disableForm(formId) {
 function addCust() {
   let name = $('#addCust-name').val();
   let phoneNo = $('#addCust-phone-no').val();
-  $.post('/addCust', {name: name, phoneNo: phoneNo}, function(data, textStatus, xhr) {
+  $.post('/admin/customer', {name: name, phoneNo: phoneNo}, function(data, textStatus, xhr) {
     if(data.success)
       makeAlert('success',`Added ${name} to Database`);
     else
@@ -45,7 +45,8 @@ function addCust() {
 function searchCust() {
   let id = +$('#searchCust-id').val();
 
-  $.get('/searchCust', {id: id}, function(data, textStatus, xhr) {
+  $.get('/admin/customer', {id: id}, function(data, textStatus, xhr) {
+    console.log(data);
     if(data.success){
       $('#updateCust-id').text(id);
       $('#updateCust-name').removeAttr('disabled');
@@ -80,13 +81,22 @@ $(function () {
     let id = +$('#updateCust-id').text();
     let name = $('#updateCust-name').val();
     let phoneNo = $('#updateCust-phone-no').val();
-    $.post('/updateCust', {id: id,name: name,mobileNo: phoneNo}, function(data, textStatus, xhr) {
-      if(data.success){
-        makeAlert('success','Successfully Updated the customer!');
-        resetForm('#updateCust');
-        disableForm('#updateCust');
-      }
+    console.log(id,name,phoneNo);
+    $.ajax({
+       url: '/admin/customer',
+       type: 'PUT',
+       data: {id: id,name: name,mobileNo: phoneNo},
+       success: function(data) {
+         if(data.success){
+           console.log(data);
+           makeAlert('success','Successfully Updated the customer!');
+           resetForm('#updateCust');
+           disableForm('#updateCust');
+         }
+       }
     });
+    // $.post('/updateCust', {id: id,name: name,mobileNo: phoneNo}, function(data, textStatus, xhr) {
+    // });
   });
 
   $('#updateCust-cancel').click(function(event) {
@@ -110,4 +120,36 @@ $(function () {
     resetForm('#removeCust')
   });
 
+  $('#findCustDetails-search').click(function(event) {
+    let id = $('#findCustDetails-id').val();
+    console.log(id);
+    $.get('/admin/customer', {id: id}, function(data, textStatus, xhr) {
+      console.log(data);
+      if(data.success){
+        $('#findCustDetails-result').empty().append(`
+          <div class="col-12 col-sm-6">
+            <p>Customer Details</p>
+            <ul>
+              <li>Customer Id: ${data.id}</li>
+              <li>Customer Name: ${data.name}</li>
+              <li>Customer Phone No.: ${data.phoneNo}</li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-6">
+            <p>Customer Bank Details</p>
+            <ul>
+              <li>Bank Name: ${data.bank}</li>
+              <li>Bank Branch: ${data.branch}</li>
+              <li>Bank Opening Time: ${data.openTime}</li>
+              <li>Bank Lunch Time: ${data.lunchTime}</li>
+              <li>Bank Closeing Time: ${data.closeTime}</li>
+            </ul>
+          </div>
+          `);
+      }else {
+        $('#findCustDetails-result').empty().append('<small>noDetails found fot his Id</small>');
+      }
+    });
+  });
 })

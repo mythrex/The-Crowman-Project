@@ -3,6 +3,7 @@ const router = express.Router();
 const Sequelize = require('sequelize');
 const Counters = require('../db.js').Counters;
 const Banks = require('../db.js').Banks;
+const History = require('../db.js').History;
 var recentAlert = {type: null,message: null};
 
 
@@ -47,14 +48,23 @@ router.get('/admin/counters/:id', (req, res) => {
 });
 
 router.post('/admin/counters', (req, res) => {
-  console.log(req.body);
+  let name = req.body.counterName;
   Counters.create({
-    counterName: req.body.counterName,
+    counterName: name,
     counterDescription: req.body.counterDescription,
     bankId: 1
   }).then((result) => {
-    res.statusCode = 200,
-    res.send(result)
+    History.create({
+      type: 'counters',
+      task: 'add',
+      desc: 'Added a counter with name: '+ name,
+      by: 'admin'
+    }).then(() => {
+      res.statusCode = 200,
+      res.send(result)
+    }).catch((err) => {
+      throw err;
+    })
   }).catch((err) => {
     throw err;
   })
@@ -67,11 +77,31 @@ router.delete('/admin/counters/:id', (req, res) => {
     }
   }).then((result) => {
     if (result) {
-      res.statusCode = 200,
-      res.send('Successfully Deleted')
+
+      History.create({
+        type: 'counters',
+        task: 'delete',
+        desc: 'Deleted a counter with id: '+ id,
+        by: 'admin'
+      }).then(() => {
+        res.statusCode = 200,
+        res.send('Successfully Deleted');
+      }).catch((err) => {
+        throw err;
+      })
+
     } else {
-      res.statusCode = 404;
-      res.send('Nothing found!')
+      History.create({
+        type: 'counters',
+        task: 'delete',
+        desc: 'Failed to deleted a counter with id: '+ id,
+        by: 'admin'
+      }).then(() => {
+        res.statusCode = 404;
+        res.send('Nothing found!');
+      }).catch((err) => {
+        throw err;
+      })
     }
   }).catch((err) => {
     throw err;

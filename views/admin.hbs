@@ -39,7 +39,7 @@
       </div>
     </div>
   </div>
-  
+
   <!--Update customer-->
   <div class="col-12 col-sm-6 col-md-4">
     <div class="card">
@@ -95,44 +95,17 @@
         <h6 class="card-subtitle mb-2 text-muted">Find Customer Details</h6>
         <p class="card-text">
 
-          <form action="/findCustDetails" method="get" id="findCustDetails">
+          <form action="/admin/customer" method="get" id="findCustDetails">
             <div class="form-group">
               <label for="findCustDetails-id">Id</label>
               <input name="id" type="number" class="form-control" id="findCustDetails-id" placeholder="Customer Id to search for">
             </div>
-            <button id="findCustDetails-search" type="submit" class="btn btn-primary">Search</button>
+            <button id="findCustDetails-search" type="button" class="btn btn-primary">Search</button>
           </form>
 
           <div class="container">
-            <div class="row">
-              {{#if details}}
-              <div class="col-12 col-sm-6">
-                <p>Customer Details</p>
-                <ul>
-                  <li>Customer Id: {{details.id}}</li>
-                  <li>Customer Name: {{details.name}}</li>
-                  <li>Customer Phone No.: {{details.phoneNo}}</li>
-                </ul>
-              </div>
-
-              <div class="col-12 col-sm-6">
-                <p>Customer Bank Details</p>
-                <ul>
-                  <li>Bank Name: {{details.bank}}</li>
-                  <li>Bank Branch: {{details.branch}}</li>
-                  <li>Bank Opening Time: {{details.openTime}}</li>
-                  <li>Bank Lunch Time: {{details.lunchTime}}</li>
-                  <li>Bank Closeing Time: {{details.closeTime}}</li>
-                </ul>
-              </div>
-              {{else}}
-                {{#if noDetails}}
-                  <small>{{noDetails}}</small>
-                {{/if}}
-
-              {{/if}}
-
-
+            <div class="row" id="findCustDetails-result">
+    
             </div>
           </div>
 

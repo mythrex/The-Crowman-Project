@@ -6,7 +6,7 @@ const db = new Sequelize("mydb","mythrex","123",{
   host: "localhost"
 });
 
-//admintable
+//admin table
 const admins = db.define('admins',{
   id: {
     type: Sequelize.INTEGER,
@@ -67,6 +67,10 @@ const customers = db.define('customers',{
   mobileNo: {
     type: Sequelize.STRING,
   },
+  status: {
+    type: Sequelize.ENUM('inLine','atCounter','done'),
+    allowNull: false
+  }
 });
 
 //bank table
@@ -84,6 +88,52 @@ const counters = db.define('counters',{
   counterDescription: {
     type: Sequelize.TEXT,
     allowNull: false
+  },
+  customerId: {
+    type: Sequelize.INTEGER,
+    allowNull: true,
+    unique: true
+  }
+});
+
+//messages table
+const messages = db.define('messages',{
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  type: {
+    type: Sequelize.ENUM('normal','warning','important'),
+    allowNull: false,
+  },
+  message: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+});
+
+//messages table
+const history = db.define('history',{
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  type: {
+    type: Sequelize.ENUM('customers','counters','messages','history'),
+    allowNull: false,
+  },
+  task: {
+    type: Sequelize.ENUM('delete','add','update'),
+    allowNull: false,
+  },
+  desc: {
+    type: Sequelize.STRING
+  },
+  by: {
+    type: Sequelize.ENUM('admin','counter','customer'),
+    allowNull: false
   }
 });
 
@@ -93,6 +143,9 @@ customers.belongsTo(banks);
 
 banks.hasMany(counters);
 counters.belongsTo(banks);
+
+admins.hasMany(messages);
+messages.belongsTo(admins);
 
 db.sync().then(() => {
   console.log("connected to db");
@@ -104,5 +157,7 @@ module.exports = {
   Admins: admins,
   Banks: banks,
   Customers: customers,
-  Counters: counters
+  Counters: counters,
+  Messages: messages,
+  History: history
 };
