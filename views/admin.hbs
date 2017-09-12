@@ -1,116 +1,190 @@
 <div class="row">
-  <!--Add customer-->
-  <div class="col-12 col-sm-6 col-md-4">
+  <!--Card 1-->
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card card-inverse bg-accent-color">
+      <div class="card-header">
+        In line
+      </div>
+      <div class="card-body special-card">
+        <span class="fa fa-user special-card-icon"></span>
+        <span class="special-card-text" id="inLineCustomerCount"></span>
+      </div>
+    </div>
+  </div>
+  <!--Card 2-->
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card card-inverse bg-danger">
+      <div class="card-header">
+        On Counter
+      </div>
+      <div class="card-body special-card">
+        <span class="fa fa-clock-o special-card-icon"></span>
+        <span class="special-card-text" id="atCounterCustomerCount"></span>
+      </div>
+    </div>
+  </div>
+  <!--Card 3-->
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card card-inverse bg-success">
+      <div class="card-header">
+        Done
+      </div>
+      <div class="card-body special-card">
+        <span class="fa fa-check-circle-o special-card-icon"></span>
+        <span class="special-card-text" id="doneCustomerCount"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--card for adding updating-->
+<div class="row">
+  <div class="col-sm-12 col-md-5">
+    <!--Add customer-->
     <div class="card">
+      <div class="card-header">
+        Add a customer <span class="fa fa-plus"></span>
+      </div>
       <div class="card-body">
-        <h4 class="card-title">Add a customer</h4>
         <h6 class="card-subtitle mb-2 text-muted">Fill in the details to add a customer</h6>
 
         <form id="addCust">
           <div class="form-group">
             <label for="addCust-name">Name</label>
-            <input type="text" class="form-control" id="addCust-name" placeholder="Customer Name">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <span class="fa fa-user"></span>
+              </div>
+              <input type="text" class="form-control" id="addCust-name" placeholder="Customer Name">
+            </div>
           </div>
           <div class="form-group">
             <label for="addCust-phone-no">Phone No:</label>
-            <input type="tel" class="form-control" id="addCust-phone-no" placeholder="Customer Phone No">
-          </div>
-          <button id="addCust-submit" type="button" class="btn btn-primary">Submit</button>
-          <button id="addCust-reset" type="button" class="btn btn-secondary">Reset</button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-  <!--Search a customer-->
-  <div class="col-12 col-sm-6 col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-muted">Add Id of customer to update its details</h6>
-
-        <form id="searchCust">
-          <div class="form-group">
-            <label for="searchCust-id">Id</label>
-            <input type="number" class="form-control" id="searchCust-id" placeholder="Customer Id to search for">
-          </div>
-          <button id="searchCust-search" type="button" class="btn btn-primary">Search</button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-
-  <!--Update customer-->
-  <div class="col-12 col-sm-6 col-md-4">
-    <div class="card">
-      <div class="card-header card-inverse bg-app-color">
-        <h6>Update a customer</h6>
-      </div>
-      <div class="card-body">
-
-        <form id="updateCust">
-          <h5 class="card-subtitle mb-2">Showing for id: <span id="updateCust-id"></span></h5>
-          <div class="form-group">
-            <label for="updateCust-name">Name</label>
-            <input type="text" class="form-control" id="updateCust-name" placeholder="Customer Name" disabled>
-          </div>
-          <div class="form-group">
-            <label for="aupdateust-phone-no">Phone No:</label>
-            <input type="tel" class="form-control" id="updateCust-phone-no" placeholder="Customer Phone No" disabled>
-          </div>
-          <button id="updateCust-update" type="button" class="btn btn-primary" disabled>Update</button>
-          <button id="updateCust-cancel" type="button" class="btn btn-secondary" disabled>Cancel</button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <!--Remove customer-->
-  <div class="col-12 col-sm-6 col-md-4">
-    <div class="card">
-      <div class="card-header card-inverse bg-danger">
-        <h6>Remove a customer!</h6>
-      </div>
-      <div class="card-body">
-
-        <form id="removeCust">
-          <div class="form-group">
-            <label for="removeCust-id">Id</label>
-            <input type="number" class="form-control" id="removeCust-id" placeholder="Customer Id to remove">
-          </div>
-          <button id="removeCust-remove" type="button" class="btn btn-danger">Remove</button>
-          <button id="removeCust-cancel" type="button" class="btn btn-secondary">Cancel</button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-  <!--Show Customer Details-->
-  <div class="col-12 col-sm-6 col-md-8">
-    <div class="card">
-      <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-muted">Find Customer Details</h6>
-        <p class="card-text">
-
-          <form action="/admin/customer" method="get" id="findCustDetails">
-            <div class="form-group">
-              <label for="findCustDetails-id">Id</label>
-              <input name="id" type="number" class="form-control" id="findCustDetails-id" placeholder="Customer Id to search for">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <span class="fa fa-phone"></span>
+              </div>
+              <input type="tel" class="form-control" id="addCust-phone-no" placeholder="Customer Phone No">
             </div>
-            <button id="findCustDetails-search" type="button" class="btn btn-primary">Search</button>
+          </div>
+          <button id="addCust-submit" type="button" class="btn btn-accent btn-round">Submit <span class="fa fa-upload"></span></button>
+          <button id="addCust-reset" type="button" class="btn btn-secondary btn-round">Reset <span class="fa fa-refresh"></span></button>
+        </form>
+
+      </div>
+    </div>
+
+    <!--Update customer-->
+      <div class="card">
+        <div class="card-header">
+          <h6>Update a customer</h6>
+        </div>
+        <div class="card-body">
+
+          <form id="searchCust">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="number" class="form-control" id="searchCust-id" placeholder="Customer Id to search for">
+                  <button id="searchCust-search" type="button" class="btn btn-neutral"><span class="fa fa-search"></span></button>
+              </div>
+            </div>
           </form>
 
-          <div class="container">
-            <div class="row" id="findCustDetails-result">
-    
+          <form id="updateCust">
+            <h5 class="card-subtitle mb-2">Showing for id: <span id="updateCust-id"></span></h5>
+            <div class="form-group">
+              <label for="updateCust-name">Name</label>
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <span class="fa fa-user"></span>
+                </div>
+                <input type="text" class="form-control" id="updateCust-name" placeholder="Customer Name" disabled>
+              </div>
             </div>
-          </div>
+            <div class="form-group">
+              <label for="aupdateust-phone-no">Phone No:</label>
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <span class="fa fa-user"></span>
+                </div>
+                <input type="tel" class="form-control" id="updateCust-phone-no" placeholder="Customer Phone No" disabled>
+              </div>
+            </div>
+            <button id="updateCust-update" type="button" class="btn btn-accent btn-round" disabled>Update <span class="fa fa-upload"></span></button>
+            <button id="updateCust-cancel" type="button" class="btn btn-secondary btn-round" disabled>Cancel <span class="fa fa-refresh"></span></button>
+          </form>
 
-        </p>
+        </div>
+      </div>
+    </div>
+
+    <!--History for customers-->
+    <div class="col-sm-12 col-md-7">
+      <div class="card">
+        <div class="card-header bg-accent-color">
+          History <span class="fa fa-history"></span>  
+        </div>
+        <table class="table table-striped table-resposive history-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Task</th>
+              <th>Description</th>
+              <th>CreatedAt</th>
+            </tr>
+          </thead>
+          <tbody id="customerHistoryTable">
+            
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="row">
+    <!--Remove customer-->
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-header card-inverse bg-danger">
+          <h6>Remove a customer!</h6>
+        </div>
+        <div class="card-body">
+
+          <form id="removeCust">
+            <div class="form-group">
+              <input type="number" class="form-control" id="removeCust-id" placeholder="Customer Id to remove">
+            </div>
+            <button id="removeCust-remove" type="button" class="btn btn-neutral btn-round full-width">Remove <span class="fa fa-trash"></span></button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!--Show Customer Details-->
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-header card-inverse bg-app-color">Find Customer Details</div>
+        <div class="card-body">
+          <p class="card-text">
+
+            <form action="/admin/customer" method="get" id="findCustDetails">
+              <div class="form-group">
+                <div class="input-group">
+                  <input name="id" type="number" class="form-control" id="findCustDetails-id" placeholder="Customer Id to search for">
+                  <button id="findCustDetails-search" type="button" class="btn btn-primary"><span class='fa fa-search'></span></button>
+                </div>
+              </div>
+            </form>
+
+            <div class="container">
+              <div class="row" id="findCustDetails-result">
+
+              </div>
+            </div>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

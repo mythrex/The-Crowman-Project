@@ -1,0 +1,116 @@
+<div class="row">
+  <!--Add customer-->
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Add a customer</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Fill in the details to add a customer</h6>
+
+        <form id="addCust">
+          <div class="form-group">
+            <label for="addCust-name">Name</label>
+            <input type="text" class="form-control" id="addCust-name" placeholder="Customer Name">
+          </div>
+          <div class="form-group">
+            <label for="addCust-phone-no">Phone No:</label>
+            <input type="tel" class="form-control" id="addCust-phone-no" placeholder="Customer Phone No">
+          </div>
+          <button id="addCust-submit" type="button" class="btn btn-primary">Submit</button>
+          <button id="addCust-reset" type="button" class="btn btn-secondary">Reset</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <!--Search a customer-->
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">Add Id of customer to update its details</h6>
+
+        <form id="searchCust">
+          <div class="form-group">
+            <label for="searchCust-id">Id</label>
+            <input type="number" class="form-control" id="searchCust-id" placeholder="Customer Id to search for">
+          </div>
+          <button id="searchCust-search" type="button" class="btn btn-primary">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!--Update customer-->
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="card">
+      <div class="card-header card-inverse bg-app-color">
+        <h6>Update a customer</h6>
+      </div>
+      <div class="card-body">
+
+        <form id="updateCust">
+          <h5 class="card-subtitle mb-2">Showing for id: <span id="updateCust-id"></span></h5>
+          <div class="form-group">
+            <label for="updateCust-name">Name</label>
+            <input type="text" class="form-control" id="updateCust-name" placeholder="Customer Name" disabled>
+          </div>
+          <div class="form-group">
+            <label for="aupdateust-phone-no">Phone No:</label>
+            <input type="tel" class="form-control" id="updateCust-phone-no" placeholder="Customer Phone No" disabled>
+          </div>
+          <button id="updateCust-update" type="button" class="btn btn-primary" disabled>Update</button>
+          <button id="updateCust-cancel" type="button" class="btn btn-secondary" disabled>Cancel</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!--Remove customer-->
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="card">
+      <div class="card-header card-inverse bg-danger">
+        <h6>Remove a customer!</h6>
+      </div>
+      <div class="card-body">
+
+        <form id="removeCust">
+          <div class="form-group">
+            <label for="removeCust-id">Id</label>
+            <input type="number" class="form-control" id="removeCust-id" placeholder="Customer Id to remove">
+          </div>
+          <button id="removeCust-remove" type="button" class="btn btn-danger">Remove</button>
+          <button id="removeCust-cancel" type="button" class="btn btn-secondary">Cancel</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <!--Show Customer Details-->
+  <div class="col-12 col-sm-6 col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">Find Customer Details</h6>
+        <p class="card-text">
+
+          <form action="/admin/customer" method="get" id="findCustDetails">
+            <div class="form-group">
+              <label for="findCustDetails-id">Id</label>
+              <input name="id" type="number" class="form-control" id="findCustDetails-id" placeholder="Customer Id to search for">
+            </div>
+            <button id="findCustDetails-search" type="button" class="btn btn-primary">Search</button>
+          </form>
+
+          <div class="container">
+            <div class="row" id="findCustDetails-result">
+    
+            </div>
+          </div>
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

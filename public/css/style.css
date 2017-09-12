@@ -2,40 +2,103 @@ body {
   font-family: Roboto,sans-serif; }
 
 a {
-  color: #7a82ab; }
+  color: #F96332; }
   a:hover {
-    color: #4a5175; }
+    color: #bf3306; }
 
 main {
   margin-top: 20px; }
 
+.btn {
+  border-radius: 0.1875rem;
+  display: inline-block; }
+
+.btn-round {
+  border-radius: 30px;
+  border-width: 1px; }
+
+.btn-icon {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  font-size: 1em;
+  overflow: hidden;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  color: white; }
+
 .btn-primary {
   color: white;
-  background: #7a82ab;
-  border: 1px solid #7a82ab; }
+  background: #F96332;
+  border: 1px solid #F96332; }
+  .btn-primary:active {
+    background: #bf3306;
+    border: 1px solid #bf3306; }
   .btn-primary:hover {
-    background: #4a5175;
-    border: 1px solid #4a5175; }
-  .btn-primary:disabled {
-    background: #b9bdd2;
-    border: 1px solid #b9bdd2; }
-    .btn-primary:disabled:hover {
-      background: #b9bdd2;
-      border: 1px solid #b9bdd2; }
+    background: #fa8964;
+    border: 1px solid #fa8964; }
+
+.btn-primary[disabled] {
+  background: #fa8964;
+  border: 1px solid #fa8964; }
 
 .btn-outline-primary {
-  color: #7a82ab;
-  border: 1px solid #7a82ab; }
+  color: #F96332;
+  border: 1px solid #F96332; }
   .btn-outline-primary:hover {
     color: white;
-    background-color: #4a5175;
-    border: 1px solid #4a5175; }
+    background-color: #bf3306;
+    border: 1px solid #bf3306; }
+
+.btn-neutral {
+  color: #F96332;
+  background: White;
+  border: 1px solid #F96332; }
+  .btn-neutral:active {
+    background: #f1f1f1; }
+
+.btn-accent {
+  color: white;
+  background: #03A9F4;
+  border: 1px solid #03A9F4; }
+  .btn-accent:active {
+    background: #60ccfd; }
+  .btn-accent:hover {
+    background: #60ccfd; }
+
+.btn-accent[disabled] {
+  color: white;
+  background: #60ccfd;
+  border: 1px solid #60ccfd; }
+
+.btn-outline-accent {
+  color: #03A9F4;
+  border: 1px solid #03A9F4; }
+  .btn-outline-accent:hover {
+    color: white;
+    background-color: #0286c2;
+    border: 1px solid #0286c2; }
+
+form button[type=submit] {
+  display: block;
+  width: 100%; }
 
 .form-control:focus {
-  border: 1px solid #ef5b5b; }
+  border: 1px solid #03A9F4;
+  transition: border 0.5s ease-in-out; }
+
+input[type=text], input[type=email], input[type=password], input[type=text], input[type=tel], input[type=number] {
+  border-radius: 30px; }
+
+.input-group-addon {
+  background: #03A9F4;
+  color: White; }
 
 option:focus, option:active, option:checked {
-  background: linear-gradient(#ef5b5b, #ef5b5b); }
+  background: linear-gradient(#03A9F4, #03A9F4); }
 
 label {
   cursor: pointer; }
@@ -48,17 +111,20 @@ label {
       font-style: normal;
       font-weight: normal;
       font-variant: normal;
+      font-size: 1.5em;
       text-transform: none;
       line-height: 1;
       width: 1em;
       display: inline-block;
       margin-right: 5px;
-      color: #ef5b5b; }
+      color: #03A9F4;
+      transition: all 0.4s ease-in-out; }
     label input[type=checkbox]:checked + .label-text::before {
-      content: "\f14a"; }
+      content: "\f14a";
+      transition: all 0.4s ease-in-out; }
     label input[type=checkbox]:disabled + .label-text::before {
       content: "\f096";
-      color: #f8b8b8; }
+      color: #60ccfd; }
   label input[type=radio] {
     display: none; }
     label input[type=radio] + .label-text::before {
@@ -73,46 +139,71 @@ label {
       width: 1em;
       display: inline-block;
       margin-right: 5px;
-      color: #ef5b5b; }
+      color: #03A9F4; }
     label input[type=radio]:checked + .label-text::before {
       content: "\f192"; }
     label input[type=radio]:disabled + .label-text::before {
       content: "\f1db";
-      color: #f8b8b8; }
+      color: #60ccfd; }
+
+.form-inverse .form-control-inverse {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none; }
+  .form-inverse .form-control-inverse:focus {
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease-in;
+    color: white; }
+  .form-inverse .form-control-inverse::placeholder {
+    color: white; }
+
+.form-inverse .form-group small, .form-inverse .form-group .text-muted {
+  color: white; }
+
+.form-inverse .form-group .input-group .input-group-addon {
+  background: rgba(255, 255, 255, 0.2);
+  color: White; }
+
+.badge {
+  border-radius: 30px; }
 
 .badge-default {
-  background-color: #7a82ab; }
+  background-color: White;
+  color: #03A9F4;
+  border: 1px solid #03A9F4; }
+
+.badge-primary {
+  background-color: White;
+  color: #F96332;
+  border: 1px solid #F96332; }
 
 .navbar {
   background: White;
   border-bottom: 1px solid #BDBDBD; }
   .navbar .navbar-brand {
-    color: #7a82ab; }
+    color: #F96332; }
     .navbar .navbar-brand:hover {
-      color: #4a5175; }
+      color: #bf3306; }
   .navbar .navbar-nav {
     flex-direction: row; }
     .navbar .navbar-nav .nav-item .nav-link {
+      margin-right: 10px;
       color: #757575; }
       .navbar .navbar-nav .nav-item .nav-link:hover {
         color: #212121; }
     .navbar .navbar-nav .active .nav-link {
-      color: #7a82ab; }
+      color: #F96332; }
       .navbar .navbar-nav .active .nav-link:hover {
-        color: #4a5175; }
+        color: #bf3306; }
 
 .card {
   margin: 5px; }
-  .card .card-subtitle {
-    color: #757575; }
   .card .card-text {
     color: #757575; }
-  .card .card-header {
-    background: #7a82ab;
-    color: White; }
-    .card .card-header a {
+    .card .card-text a {
       color: White; }
-      .card .card-header a:hover {
+      .card .card-text a:hover {
         color: #f1f1f1; }
 
 .card-inverse {
@@ -120,44 +211,87 @@ label {
   .card-inverse .card-text {
     color: white; }
 
-.bg-app-color {
-  background-color: #7a82ab;
-  color: White; }
-
 .alert-info {
-  background: #b9bdd2;
-  border: 1px solid #b9bdd2;
-  color: #4a5175; }
+  background: #fa8964;
+  border: 1px solid #fa8964;
+  color: white; }
 
 .alert {
+  z-index: 3000;
   position: fixed;
-  min-width: 20%;
-  left: auto;
-  right: 10px;
-  margin: 20px;
-  z-index: 1000; }
+  top: 60px;
+  right: 0;
+  width: 60vh; }
 
 .pagination .page-item .page-link {
-  color: #d01414; }
+  border-radius: 50%;
+  margin-right: 5px;
+  border: none;
+  color: #F96332; }
+  .pagination .page-item .page-link:hover {
+    background: #f1f1f1; }
+
+.pagination .active .page-link {
+  background: #F96332;
+  color: White; }
+  .pagination .active .page-link:hover {
+    background: #fa8964; }
 
 .progress .progress-bar {
-  background-color: #7a82ab; }
+  background-color: #F96332; }
 
 .dropdown .dropdown-menu .dropdown-item:hover {
-  background: #7a82ab;
-  color: White; }
+  background: #f1f1f1;
+  color: #212121; }
 
 .modal-dialog .modal-content .modal-header {
-  background: #7a82ab;
-  color: White; }
-  .modal-dialog .modal-content .modal-header .close {
-    color: White; }
+  color: #212121;
+  border-bottom: none; }
 
-.counter {
-  background: #ef5b5b;
-  display: inline-block;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 5px;
-  color: White;
-  cursor: pointer; }
+.modal-dialog .modal-content .modal-body {
+  color: #212121;
+  border-bottom: none; }
+
+.modal-dialog .modal-content .modal-footer {
+  border-top: none; }
+  .modal-dialog .modal-content .modal-footer .close {
+    color: #F96332; }
+
+.page-header {
+  color: #F96332;
+  padding: 10px; }
+  .page-header h1, .page-header h2, .page-header h3 {
+    border-bottom: 1px solid #BDBDBD; }
+
+.nav-pills .nav-item .nav-link {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: rgba(225, 225, 225, 0.3);
+  color: #757575;
+  transition: all 0.3s ease 0s;
+  padding: 15.5px; }
+
+.nav-pills .nav-item .active {
+  background: #F96332;
+  color: White; }
+
+.no-border {
+  border: none; }
+
+.full-width {
+  width: 100%;
+  display: block; }
+
+.text-center {
+  text-align: center; }
+
+.bg-app-color {
+  background-color: #F96332;
+  color: White; }
+
+.bg-accent-color {
+  background-color: #03A9F4;
+  color: White; }

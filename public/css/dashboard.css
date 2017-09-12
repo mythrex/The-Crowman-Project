@@ -8,7 +8,7 @@
 
 @media (min-width: 768px) {
   .sidebar {
-    background: #7a82ab;
+    background: #F96332;
     width: 260px;
     display: flex;
     flex-direction: column; }
@@ -26,22 +26,22 @@
         text-align: center;
         padding: 5px; }
         .sidebar-wrapper .nav li:hover {
-          background: #ef5b5b; }
+          background: #03A9F4; }
         .sidebar-wrapper .nav li a:hover {
           text-decoration: none; }
       .sidebar-wrapper .nav .active {
-        background: #4a5175;
-        border-right: 15px solid #ef5b5b; }
+        background: #bf3306;
+        border-right: 15px solid #03A9F4; }
   .sidebar-footer {
     height: auto;
     text-align: center;
     padding: 10px;
     padding-bottom: 20px;
-    background: #4a5175;
+    background: #bf3306;
     color: White; } }
 
 .nav-item .dropdown #messages:hover {
-  color: #ef5b5b; }
+  color: #03A9F4; }
 
 .nav-item .dropdown .dropdown-menu {
   position: absolute;
@@ -67,6 +67,14 @@
       text-overflow: ellipsis;
       overflow: hidden; }
 
+.special-card {
+  font-size: 3em;
+  display: flex; }
+  .special-card .special-card-icon {
+    flex: 9; }
+  .special-card .special-card-text {
+    flex: 1; }
+
 .wrapper {
   height: 100vh; }
 
@@ -81,3 +89,8 @@
     padding: 10px;
     background-color: #f1f1f1;
     overflow-y: auto; }
+
+.history-table {
+  max-height: 600px;
+  overflow-y: scroll;
+  display: block; }

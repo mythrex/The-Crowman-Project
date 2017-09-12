@@ -1,6 +1,19 @@
+form
+  button[type=submit]
+    display: block
+    width: 100%
 
 .form-control:focus
   border: 1px solid $accent-color
+  transition: border 0.5s ease-in-out
+
+input[type=text],input[type=email],input[type=password],input[type=text],input[type=tel],input[type=number]
+  border-radius: 30px
+
+.input-group-addon
+  background: $accent-color
+  color: White
+
 
 option:focus,option:active,option:checked
   background: linear-gradient($accent-color, $accent-color)
@@ -18,15 +31,18 @@ label
       font-style: normal
       font-weight: normal
       font-variant: normal
+      font-size: 1.5em
       text-transform: none
       line-height: 1
       width: 1em
       display: inline-block
       margin-right: 5px
       color: $accent-color
+      transition: all 0.4s ease-in-out
 
     &:checked + .label-text::before
       content: "\f14a"
+      transition: all 0.4s ease-in-out
 
     &:disabled + .label-text::before
       content: "\f096"
@@ -55,3 +71,25 @@ label
     &:disabled + .label-text::before
       content: "\f1db"
       color: $accent-color-light
+
+.form-inverse
+  .form-control-inverse
+    background: rgba(255, 255, 255, 0.2)
+    color: white
+    border: none
+    &:focus
+      border: none
+      background: rgba(255, 255, 255, 0.4)
+      transition: all 0.3s ease-in
+      color: white
+    &::placeholder
+      color: white
+
+  .form-group
+    small,.text-muted
+      color: white
+
+    .input-group
+      .input-group-addon
+        background: rgba(255, 255, 255, 0.2)
+        color: White

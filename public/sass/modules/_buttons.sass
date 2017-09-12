@@ -1,19 +1,41 @@
+.btn
+  border-radius: 0.1875rem
+  display: inline-block
+
+
+.btn-round
+  border-radius: 30px
+  border-width: 1px
+
+.btn-icon
+  border-radius: 50%
+  height: 48px
+  width: 48px
+  min-width: 48px
+  font-size: 1em
+  overflow: hidden
+  line-height: normal
+  position: relative
+  text-align: center
+  display: inline-block
+  color: white
+
+
 .btn-primary
   color: white
   background: $primary-color
   border: 1px solid $primary-color
-
-  &:hover
+  &:active
     background: $primary-color-dark
     border: 1px solid $primary-color-dark
 
-  &:disabled
+  &:hover
     background: $primary-color-light
     border: 1px solid $primary-color-light
 
-    &:hover
-      background: $primary-color-light
-      border: 1px solid $primary-color-light
+.btn-primary[disabled]
+  background: $primary-color-light
+  border: 1px solid $primary-color-light
 
 .btn-outline-primary
   color: $primary-color
@@ -22,3 +44,31 @@
     color: white
     background-color: $primary-color-dark
     border: 1px solid $primary-color-dark
+
+.btn-neutral
+  color: $primary-color
+  background: White
+  border: 1px solid $primary-color
+  &:active
+    background: #f1f1f1
+
+.btn-accent
+  color: white
+  background: $accent-color
+  border: 1px solid $accent-color
+  &:active
+    background: $accent-color-light
+  &:hover
+    background: $accent-color-light
+.btn-accent[disabled]
+  color: white
+  background: $accent-color-light
+  border: 1px solid $accent-color-light
+  
+.btn-outline-accent
+  color: $accent-color
+  border: 1px solid $accent-color
+  &:hover
+    color: white
+    background-color: $accent-color-dark
+    border: 1px solid $accent-color-dark

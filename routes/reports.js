@@ -28,7 +28,7 @@ function countDoneCustomers(){
     return c;
   }).catch((err) => {
     throw err;
-  })
+  });
 }
 
 function noOfCounters(){
@@ -75,5 +75,4 @@ function countCustomers() {
   });
 }
 
-countCustomers()
 module.exports = router;

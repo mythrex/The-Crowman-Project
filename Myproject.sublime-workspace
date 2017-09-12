@@ -1,0 +1,398 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dis",
+				"display"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"customer",
+				"customerHistoryTable"
+			],
+			[
+				"for",
+				"for\tfor (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"get",
+				"get\t$.get()"
+			],
+			[
+				"log",
+				"log\tconsole.log"
+			],
+			[
+				"console",
+				"console.error();"
+			],
+			[
+				"cos",
+				"console.log();"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/js/admin.js",
+			"settings":
+			{
+				"buffer_size": 5603,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/admin.hbs",
+			"settings":
+			{
+				"buffer_size": 6791,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/admin.js",
+			"settings":
+			{
+				"buffer_size": 3565,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "Package Control: re",
+		"selected_items":
+		[
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"open bas",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"termianl",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"termia",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"gulp",
+				"Gulp"
+			],
+			[
+				"Package Control: insa",
+				"Package Control: Install Package"
+			],
+			[
+				"terminal view",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 239.0,
+		"history":
+		[
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project"
+	],
+	"file_history":
+	[
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public/sass/dashboard.sass",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/views/admin.hbs",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/terminal.glue",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes/terminal.glue",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/server.js",
+		"/home/mythrex/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/mythrex/.config/sublime-text-3/Packages/Terminality/Default (Linux).sublime-keymap",
+		"/home/mythrex/.config/sublime-text-3/Packages/Terminality/Terminality.sublime-settings",
+		"/home/mythrex/.config/sublime-text-3/Packages/User/console.log.sublime-snippet",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/gulpfile.js",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public/js/admin.js",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes/admin.js"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"remove"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/home/mythrex/MEGAsync/Coding/The Crowman Project"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/js/admin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1897,
+								1897
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/admin.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6791,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1409,
+								1409
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/grammars/Handlebars.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1380.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "routes/admin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3534,
+								3534
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2825.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 73.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dashboar",
+				"public/sass/dashboard.sass"
+			],
+			[
+				"admin",
+				"routes/admin.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -32,6 +32,7 @@ function addCust() {
   let name = $('#addCust-name').val();
   let phoneNo = $('#addCust-phone-no').val();
   $.post('/admin/customer', {name: name, phoneNo: phoneNo}, function(data, textStatus, xhr) {
+    console.log(data);
     if(data.success)
       makeAlert('success',`Added ${name} to Database`);
     else
@@ -62,7 +63,40 @@ function searchCust() {
 
   resetForm('#searchCust');
 }
+//to count the status of customers
+function countinlineCustomers() {
+  $.get('/admin/customers/count?status=inLine', function(data) {
+    $('#inLineCustomerCount').text(data.count);
+  });
+}
 
+function countatCounterCustomers() {
+  $.get('/admin/customers/count?status=atCounter', function(data) {
+    $('#atCounterCustomerCount').text(data.count);
+  });
+}
+
+function countDoneCustomers() {
+  $.get('/admin/customers/count?status=done', function(data) {
+    $('#doneCustomerCount').text(data.count);
+  });
+}
+//get history
+function updateCustomerHistoryTable() {
+  $.get('/admin/history?type=customers', function(data) {
+    $('#customerHistoryTable').empty();
+    for (index in data) {
+      $('#customerHistoryTable').append(`
+          <tr>
+              <th scope="row">${index}</th>
+              <td>${data[index].task}</td>
+              <td>${data[index].desc}</td>
+              <td>${data[index].createdAt}</td>
+            </tr>
+        `);
+    }
+  });
+}
 
 $(function () {
   disableForm('#updateCust');
@@ -88,7 +122,6 @@ $(function () {
        data: {id: id,name: name,mobileNo: phoneNo},
        success: function(data) {
          if(data.success){
-           console.log(data);
            makeAlert('success','Successfully Updated the customer!');
            resetForm('#updateCust');
            disableForm('#updateCust');
@@ -106,14 +139,20 @@ $(function () {
   //for removing a customer
   $('#removeCust-remove').click(function(event) {
     let id = +$('#removeCust-id').val();
-    $.post('/removeCust', {id: id}, function(data, textStatus, xhr) {
-      console.log(data.success);
-      if(data.success){
-        makeAlert('danger','Successfully deleted customer!');
-      }else {
-        makeAlert('primary','Id specified is not found!');
+    $.ajax({
+      url: '/admin/customer',
+      type: 'delete',
+      data: {id: id},
+      success: function (data) {
+        if (data.success) {
+          makeAlert('danger','Customer Removed! ID: ' + id);
+        }
+        else{
+          makeAlert('info','Cannot delete ID: '+id);
+        }
       }
     });
+
     resetForm('#removeCust');
   });
   $('#removeCust-cancel').click(function(event) {
@@ -152,4 +191,11 @@ $(function () {
       }
     });
   });
-})
+
+  //setting up the numbers on special card
+  countinlineCustomers();
+  countatCounterCustomers();
+  countDoneCustomers();  
+  //update customer history table
+  updateCustomerHistoryTable();
+});
