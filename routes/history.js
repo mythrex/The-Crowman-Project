@@ -9,13 +9,13 @@ const Admins = db.Admins;
 router.get('/admin/history', (req, res) => {
   History.findAll({
     where: req.query,
-  }).then((messages) => {
-      if(messages.length > 1){
+  }).then((history) => {
+      if(history.length > 1){
           res.statusCode = 200;
-          res.send(messages);
-      }else if (messages.length == 1) {
+          res.send(history);
+      }else if (history.length == 1) {
         res.statusCode = 200;
-        res.send(messages[0]);
+        res.send(history[0]);
       }else {
         res.statusCode = 404;
         res.send('No history found');

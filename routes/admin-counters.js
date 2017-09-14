@@ -6,6 +6,25 @@ const Banks = require('../db.js').Banks;
 const History = require('../db.js').History;
 var recentAlert = {type: null,message: null};
 
+function alert(type,message){
+  recentAlert.type = type;
+  recentAlert.message = message;
+}
+
+function nullifyAlert() {
+  recentAlert.type = null;
+  recentAlert.message = null;
+}
+
+router.get('/admin/counters-page', (req, res) => {
+  res.render('admin-counters',{
+    layout: 'dashboard',
+    counters: 'active',
+    type: recentAlert.type,
+    message: recentAlert.message
+  });
+});
+
 
 router.get('/admin/counters', (req, res) => {
   let id = req.query.id;
@@ -13,7 +32,6 @@ router.get('/admin/counters', (req, res) => {
   let counterDescription = req.query.counterDescription;
   let bankId = req.query.bankId;
   Counters.findAll({
-    include: [Banks],
     where: req.query
   }).then((counters) => {
     if (counters.length) {
@@ -60,8 +78,8 @@ router.post('/admin/counters', (req, res) => {
       desc: 'Added a counter with name: '+ name,
       by: 'admin'
     }).then(() => {
-      res.statusCode = 200,
-      res.send(result)
+      res.statusCode = 200;
+      res.send({success: true});
     }).catch((err) => {
       throw err;
     })
@@ -71,9 +89,10 @@ router.post('/admin/counters', (req, res) => {
 });
 
 router.delete('/admin/counters/:id', (req, res) => {
+  let id = req.params.id;
   Counters.destroy({
     where: {
-      id: req.params.id
+      id: id
     }
   }).then((result) => {
     if (result) {
@@ -85,7 +104,7 @@ router.delete('/admin/counters/:id', (req, res) => {
         by: 'admin'
       }).then(() => {
         res.statusCode = 200,
-        res.send('Successfully Deleted');
+        res.send({success: true});
       }).catch((err) => {
         throw err;
       })
@@ -97,8 +116,7 @@ router.delete('/admin/counters/:id', (req, res) => {
         desc: 'Failed to deleted a counter with id: '+ id,
         by: 'admin'
       }).then(() => {
-        res.statusCode = 404;
-        res.send('Nothing found!');
+        res.send({success: false});
       }).catch((err) => {
         throw err;
       })

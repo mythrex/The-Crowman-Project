@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"rre",
+				"res.redirect([status,] path)"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"counter",
+				"counterHistoryTable"
+			],
+			[
+				"col-",
+				"col-md-6"
+			],
+			[
+				"rrdi",
+				"res.redirect([status,] path)"
+			],
+			[
+				"render",
+				"res.render(view [, locals] [, callback])"
+			],
+			[
 				"dis",
 				"display"
 			],
@@ -40,30 +64,41 @@
 	"buffers":
 	[
 		{
-			"file": "public/js/admin.js",
+			"file": "views/admin-counters.hbs",
 			"settings":
 			{
-				"buffer_size": 5603,
+				"buffer_size": 3516,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views/admin.hbs",
+			"file": "routes/admin-counters.js",
 			"settings":
 			{
-				"buffer_size": 6791,
+				"buffer_size": 2896,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "routes/admin.js",
+			"file": "public/js/admin-counters.js",
 			"settings":
 			{
-				"buffer_size": 3565,
+				"buffer_size": 1428,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": " \n",
+			"settings":
+			{
+				"buffer_size": 2,
+				"line_ending": "Unix",
+				"name": "Terminal (bash)",
+				"read_only": true,
+				"scratch": true
 			}
 		}
 	],
@@ -75,9 +110,25 @@
 	"command_palette":
 	{
 		"height": 354.0,
-		"last_filter": "Package Control: re",
+		"last_filter": "termina",
 		"selected_items":
 		[
+			[
+				"termina",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"termin",
+				"Terminal View: Open Bash Terminal"
+			],
 			[
 				"Package Control: re",
 				"Package Control: Remove Package"
@@ -131,7 +182,7 @@
 				"Snippet: Lorem ipsum"
 			]
 		],
-		"width": 449.0
+		"width": 531.0
 	},
 	"console":
 	{
@@ -152,12 +203,21 @@
 	},
 	"expanded_folders":
 	[
-		"/home/mythrex/MEGAsync/Coding/The Crowman Project"
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes"
 	],
 	"file_history":
 	[
-		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public/sass/dashboard.sass",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes/admin-counters.js",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/views/layouts/dashboard.hbs",
 		"/home/mythrex/MEGAsync/Coding/The Crowman Project/views/admin.hbs",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes/history.js",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public/js/common.js",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public/js/admin.js",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public/sass/dashboard.sass",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/views/admin-counters.hbs",
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes/admin.js",
 		"/home/mythrex/MEGAsync/Coding/The Crowman Project/terminal.glue",
 		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes/terminal.glue",
 		"/home/mythrex/MEGAsync/Coding/The Crowman Project/server.js",
@@ -165,13 +225,11 @@
 		"/home/mythrex/.config/sublime-text-3/Packages/Terminality/Default (Linux).sublime-keymap",
 		"/home/mythrex/.config/sublime-text-3/Packages/Terminality/Terminality.sublime-settings",
 		"/home/mythrex/.config/sublime-text-3/Packages/User/console.log.sublime-snippet",
-		"/home/mythrex/MEGAsync/Coding/The Crowman Project/gulpfile.js",
-		"/home/mythrex/MEGAsync/Coding/The Crowman Project/public/js/admin.js",
-		"/home/mythrex/MEGAsync/Coding/The Crowman Project/routes/admin.js"
+		"/home/mythrex/MEGAsync/Coding/The Crowman Project/gulpfile.js"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -209,64 +267,66 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/js/admin.js",
+					"file": "views/admin-counters.hbs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5603,
+						"buffer_size": 3516,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1897,
-								1897
+								3247,
+								3247
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1200.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "views/admin.hbs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6791,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1409,
-								1409
-							]
-						],
-						"settings":
-						{
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Handlebars/grammars/Handlebars.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1380.0,
+						"translation.y": 1598.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "routes/admin-counters.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2726,
+								2726
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1800.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -274,29 +334,225 @@
 				},
 				{
 					"buffer": 2,
-					"file": "routes/admin.js",
+					"file": "public/js/admin-counters.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3565,
+						"buffer_size": 1428,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3534,
-								3534
+								1033,
+								1033
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2825.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2,
+						"regions":
+						{
+							"30,21":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_cyan"
+							},
+							"31,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"32,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"33,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"34,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"35,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"36,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"37,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"38,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"39,11":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							},
+							"40,21":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_cyan"
+							},
+							"40,37":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"scope": "terminalview.black_magenta"
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_complete_commit_on_tab": false,
+							"caret_style": "blink",
+							"color_scheme": "Packages/TerminalView/TerminalView.hidden-tmTheme",
+							"draw_centered": false,
+							"draw_indent_guides": false,
+							"draw_white_space": "none",
+							"git_gutter_is_enabled": false,
+							"gutter": false,
+							"highlight_line": false,
+							"scroll_past_end": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"terminal_view": true,
+							"terminal_view_activate_args":
+							{
+								"cmd": "/bin/bash -l",
+								"cwd": "/home/mythrex/MEGAsync/Coding/The Crowman Project/views",
+								"keep_open": false,
+								"syntax": null,
+								"title": "Terminal (bash)"
+							},
+							"terminal_view_last_cursor_pos":
+							[
+								0,
+								0
+							],
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -307,7 +563,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -340,11 +596,15 @@
 	{
 		"height": 0.0
 	},
+	"output.git":
+	{
+		"height": 150.0
+	},
 	"pinned_build_system": "",
 	"project": "",
 	"replace":
 	{
-		"height": 48.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -353,6 +613,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"commo",
+				"public/js/common.js"
+			],
 			[
 				"dashboar",
 				"public/sass/dashboard.sass"
@@ -390,7 +654,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 207.0,
+	"side_bar_width": 229.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

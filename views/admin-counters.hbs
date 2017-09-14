@@ -1,75 +1,112 @@
-
 {{#if type}}
   <div class="alert alert-{{type}}" role="alert">
     {{message}}
   </div>
 {{/if}}
+
 <div class="row">
-  <!--add a counter-->
-  <div class="col-12 col-sm-6">
-    <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Add a Counter</h4>
-          <h6 class="card-subtitle mb-2 text-muted">Fill in the details to add a Counter</h6>
-
-          <form id="addCount" action="addCount" method="post">
-            <div class="form-group">
-              <label for="addCount-name">Name</label>
-              <input name="addCount-name" type="text" class="form-control" id="addCount-name" placeholder="Counter Name">
+  <!--card-conatiner-->
+  <div class="col-sm-12 col-md-6">
+    <div class="row" id="counters-card-container">
+      <!--Card-->
+      <div class="col-12 col-sm-6">
+        <div class="card">
+          <div class="card-header card-inverse bg-accent-color">
+            Counter 1 - Name
+          </div>
+          <div class="card-body">
+            <div class="special-card">
+              <span class="special-card-icon fa fa-id-badge"></span>
+              <span class="special-card-text">78</span> 
             </div>
-            <div class="form-group">
-              <label for="addCount-desc">Description:</label>
-              <textarea name="addCount-desc"type="text" class="form-control" id="addCount-desc" placeholder="Add some description..." rows="3"></textarea>
-            </div>
-            <button id="addCount-submit" type="submit" class="btn btn-primary">Submit</button>
-          </form>
-
+            <div class="card-subtitle">
+              Name: PhoolanDevi
+            </div>    
+          </div>
+          <div class="card-footer text-muted">
+            <small>Updated At - 27/02/2018 20:33:21</small>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <!--add a counter-->
-  <div class="col-12 col-sm-6">
-    <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Delete a Counter</h4>
-          <form id="deleteCount" action="/admin/deleteCount" method="post">
-            <div class="form-group">
-              <label for="deleteCount-name">ID</label>
-              <input name="id" type="text" class="form-control" id="deleteCount-id" placeholder="ID of counter to be deleted">
-            </div>
-            <button id="deleteCount-submit" type="submit" class="btn btn-danger">Submit</button>
-          </form>
+      
+      
+      
 
-      </div>
     </div>
   </div>
 
+  <div class="col-sm-12 col-md-6">
+    <div class="card">
+        <div class="card-header bg-accent-color">
+          History <span class="fa fa-history"></span>  
+        </div>
+        <table class="table table-striped table-resposive history-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Task</th>
+              <th>Description</th>
+              <th>CreatedAt</th>
+            </tr>
+          </thead>
+          <tbody id="counterHistoryTable">
+            
+          </tbody>
+        </table>
+      </div>
+  </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-12 col-md-8">
+  
+  <div class="col-sm-12 col-md-6">
+    <!--Add Counter-->
     <div class="card">
+      <div class="card-header">
+        Add a counter
+      </div>
       <div class="card-body">
-        <div class="card-title">
-          <h2>Showing Counters</h2>
-        </div>
-        <div class="card-text counter-container">
+        <h6 class="card-subtitle mb-2 text-muted">Fill in the details to add a counter</h6>
 
-          {{#if array}}
-            {{#each array}}
-            <div class="counter" data-id = {{this.id}} data-toggle="tooltip" data-placement="top" title="id: {{this.id}}; Description: {{this.counterDescription}}">
-                <div class="counter-name">
-                {{this.counterName}}
+        <form id="addCount" method="post" action="/admin/counters">
+          <div class="form-group">
+            <label for="addCount-name">Name</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <span class="fa fa-user"></span>
               </div>
+              <input name="counterName" type="text" class="form-control" id="addCount-name" placeholder="Counter Name">
             </div>
-            {{/each}}
-          {{/if}}
+          </div>
+          <div class="form-group">
+            <label for="addCount-desc">Description</label>
+            <textarea name="counterDescription" type="tel" class="form-control" id="addCount-desc" placeholder="Counter Description" row="3"></textarea>
+          </div>
+          <button id="addCount-submit" type="button" class="btn btn-accent btn-round full-width">Submit <span class="fa fa-upload"></span></button>
+        </form>
 
-
-
-
-        </div>
       </div>
     </div>
   </div>
+  <!--delete counter-->
+  <div class="col-sm-12 col-md-6">
+    <div class="card">
+      <div class="card-header card-inverse bg-danger">Remove a counter <span class="fa fa-trash"></span></div>
+      <div class="card-body">
+        <div class="card-subtitle text-muted">Remove a Counter by its id</div>
+
+        <form id="deleteCount">
+          <div class="form-group">
+            <input id="deleteCount-id" type="number" class="form-control">
+          </div>
+          <button="button" id="deleteCount-submit" class="btn btn-danger full-width btn-round">Remove <span class="fa fa-trash"></span></button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
 </div>
+<!-- /.row -->
+
+<script src="/js/admin-counters.js" charset="utf-8"></script>

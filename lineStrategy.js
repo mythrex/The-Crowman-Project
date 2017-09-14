@@ -72,6 +72,8 @@ router.post('/counters/next/:counterId', (req, res) => {
                               by: 'counter'
                             });
 
+                            res.send({success: true});
+
                           }).catch((err) => {
                             throw err;
                           });
@@ -79,6 +81,8 @@ router.post('/counters/next/:counterId', (req, res) => {
                     }).catch((err) => {
                       throw err;
                     });
+                  }else{
+                    res.send({success: false});
                   }
 
                 }).catch((err) => {
@@ -89,6 +93,62 @@ router.post('/counters/next/:counterId', (req, res) => {
             throw err;
           });
 
+        }//end of if
+        else{
+
+          //finding next customer
+              Customers.findOne({
+                where: {
+                  status: 'inLine'
+                }
+              }).then((customer) => {
+
+                  if (customer) {
+                    customer.update({
+                      status: 'atCounter',
+                    }).then((customer) => {
+
+                      History.create({
+                        type: 'counters',
+                        task: 'update',
+                        desc: 'Updated the status of the first inLine customer with id '+ custId + ' to OnCounter',
+                        by: 'counter'
+                      });
+
+                      let customerId = customer.id;
+
+                      //updating customerId in counters table
+                          Counters.update({
+                            customerId: customerId,
+                          },{
+                            where: {
+                              id: counterId
+                            }
+                          }).then((counter) => {
+
+                            History.create({
+                              type: 'counters',
+                              task: 'update',
+                              desc: 'Updated the customerId: '+customerId+' in counter '+counter.name,
+                              by: 'counter'
+                            });
+
+                            res.send({success: true});
+
+                          }).catch((err) => {
+                            throw err;
+                          });
+
+                    }).catch((err) => {
+                      throw err;
+                    });
+                  }else{
+                    res.send({success: false})
+                  }
+
+                }).catch((err) => {
+                  throw err;
+                });
         }
 
     }).catch((err) => {
