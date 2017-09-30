@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/style.css">
-		<link href="/css/style.css" rel="stylesheet"/>
     <link href="/css/dashboard.css" rel="stylesheet"/>
     <!-- Scipts -->
     <script src="/js/jquery.js" charset="utf-8"></script>
@@ -45,6 +44,25 @@
           </li>
         </ul>
         </nav>
+          
+          <!--Mymodal-->
+          <div class="modal fade" id="myModal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="myModal-title"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="myModal-body">
+                </div>
+                <div class="modal-footer" id="myModal-footer">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="main-panel">
           <!-- main content -->
@@ -73,6 +91,26 @@
                   </a>
                 </li>
 
+                
+                {{#if messages}}
+                  <li class="{{messages}}">
+                    {{else}}
+                    <li>
+                  {{/if}}
+                  <a href="/admin/messages-page">
+                    <p>Messages</p>
+                  </a>
+                </li>
+
+                {{#if history}}
+                  <li class="{{history}}">
+                    {{else}}
+                    <li>
+                  {{/if}}
+                  <a href="/admin/history-page">
+                    <p>History</p>
+                  </a>
+                </li>
 
                 </ul>
               </div>
@@ -84,10 +122,8 @@
             <div class="content">
 
               {{{body}}}
+              
 
-          </div>
-      </div>
-    </div>
   <!--scripts-->
   <script type="text/javascript">
   $(function () {

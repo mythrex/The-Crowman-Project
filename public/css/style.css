@@ -82,10 +82,6 @@ main {
     background-color: #0286c2;
     border: 1px solid #0286c2; }
 
-form button[type=submit] {
-  display: block;
-  width: 100%; }
-
 .form-control:focus {
   border: 1px solid #03A9F4;
   transition: border 0.5s ease-in-out; }
@@ -295,3 +291,9 @@ label {
 .bg-accent-color {
   background-color: #03A9F4;
   color: White; }
+
+.text-primary {
+  color: #F96332 !important; }
+
+.clickable {
+  cursor: pointer; }

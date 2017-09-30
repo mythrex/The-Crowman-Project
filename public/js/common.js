@@ -27,3 +27,14 @@ function disableForm(formId) {
   .removeAttr('selected');
 }
 
+//function to setMyModal
+function showMyModal(title,body,btnPositive){
+  let myModal = $('#myModal');
+  $('#myModal-title').text(title);
+  $('#myModal-body').empty().append(body);
+  $('#myModal-footer').empty().append(btnPositive).append('<button type="button" class="btn btn-secondary" data-dismiss="modal" id="myModal-btn-negative">Cancel</button>');
+  myModal.modal('show');
+}
+function makeBtnPositive(type='primary',text='done',cb){
+  return $(`<button type="button" class="btn btn-${type}">${text}</button>`).click(cb);
+}

@@ -6,16 +6,24 @@ const db = require('../db.js');
 const History = db.History;
 const Admins = db.Admins;
 
+router.get('/admin/history-page', (req, res) => {
+  res.render('admin-history',{
+    layout: 'dashboard',
+    history: 'active',
+  });
+});
+
 router.get('/admin/history', (req, res) => {
+  let order = req.query.order;
+  delete req.query.order;
+  console.log(req.query,order);
   History.findAll({
     where: req.query,
+    order: order,
   }).then((history) => {
-      if(history.length > 1){
+      if(history.length >= 1){
           res.statusCode = 200;
           res.send(history);
-      }else if (history.length == 1) {
-        res.statusCode = 200;
-        res.send(history[0]);
       }else {
         res.statusCode = 404;
         res.send('No history found');

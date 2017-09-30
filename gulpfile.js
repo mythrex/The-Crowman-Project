@@ -39,8 +39,7 @@ gulp.task('server',() => {
 gulp.task('watch',() => {
 	livereload.listen();
 	gulp.watch('public/sass/**/*.sass',['sass']);
-  gulp.watch('public/**/*.js',['publicjs']);
-	gulp.watch('public/**/*.html',['publichtml']);
+  	gulp.watch('public/**/*.js',['publicjs']);
 	gulp.watch('views/**/*.hbs',['views']);
 })
 

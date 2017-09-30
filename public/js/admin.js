@@ -52,23 +52,9 @@ function countDoneCustomers() {
     $('#doneCustomerCount').text(data.count);
   });
 }
-//get history
-function updateCustomerHistoryTable() {
-  $.get('/admin/history',{type: 'customers'} ,function(data) {
-    $('#customerHistoryTable').empty();
-    for (index in data) {
-      $('#customerHistoryTable').append(`
-          <tr>
-              <th scope="row">${index}</th>
-              <td>${data[index].task}</td>
-              <td>${data[index].desc}</td>
-              <td>${data[index].createdAt}</td>
-            </tr>
-        `);
-    }
-  });
-}
 
+
+//document.ready
 $(function () {
   disableForm('#updateCust');
 
@@ -167,6 +153,4 @@ $(function () {
   countinlineCustomers();
   countatCounterCustomers();
   countDoneCustomers();  
-  //update customer history table
-  updateCustomerHistoryTable();
 });

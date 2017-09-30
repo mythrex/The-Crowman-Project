@@ -120,73 +120,55 @@
 
     <!--History for customers-->
     <div class="col-sm-12 col-md-7">
-      <div class="card">
-        <div class="card-header card-inverse bg-accent-color">
-          History <span class="fa fa-history"></span>  
-        </div>
-        <table class="table table-striped table-resposive history-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Task</th>
-              <th>Description</th>
-              <th>CreatedAt</th>
-            </tr>
-          </thead>
-          <tbody id="customerHistoryTable">
-            
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <!--Remove customer-->
-    <div class="col-12 col-md-6">
-      <div class="card">
-        <div class="card-header card-inverse bg-danger">
-          <h6>Remove a customer!</h6>
-        </div>
-        <div class="card-body">
-
-          <form id="removeCust">
-            <div class="form-group">
-              <input type="number" class="form-control" id="removeCust-id" placeholder="Customer Id to remove">
+      <div class="row">
+        <!--Remove customer-->
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header card-inverse bg-danger">
+              <h6>Remove a customer!</h6>
             </div>
-            <button id="removeCust-remove" type="button" class="btn btn-neutral btn-round full-width">Remove <span class="fa fa-trash"></span></button>
-          </form>
+            <div class="card-body">
 
-        </div>
-      </div>
-    </div>
-
-    <!--Show Customer Details-->
-    <div class="col-12 col-md-6">
-      <div class="card">
-        <div class="card-header">Find Customer Details</div>
-        <div class="card-body">
-          <p class="card-text">
-
-            <form action="/admin/customer" method="get" id="findCustDetails">
-              <div class="form-group">
-                <div class="input-group">
-                  <input name="id" type="number" class="form-control" id="findCustDetails-id" placeholder="Customer Id to search for">
-                  <button id="findCustDetails-search" type="button" class="btn btn-primary"><span class='fa fa-search'></span></button>
+              <form id="removeCust">
+                <div class="form-group">
+                  <input type="number" class="form-control" id="removeCust-id" placeholder="Customer Id to remove">
                 </div>
-              </div>
-            </form>
+                <button id="removeCust-remove" type="button" class="btn btn-neutral btn-round full-width">Remove <span class="fa fa-trash"></span></button>
+              </form>
 
-            <div class="container">
-              <div class="row" id="findCustDetails-result">
-
-              </div>
             </div>
+          </div>
+        </div>
 
-          </p>
+        <!--Show Customer Details-->
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">Find Customer Details</div>
+            <div class="card-body">
+              <p class="card-text">
+
+                <form action="/admin/customer" method="get" id="findCustDetails">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input name="id" type="number" class="form-control" id="findCustDetails-id" placeholder="Customer Id to search for">
+                      <button id="findCustDetails-search" type="button" class="btn btn-primary"><span class='fa fa-search'></span></button>
+                    </div>
+                  </div>
+                </form>
+
+                <div class="container">
+                  <div class="row" id="findCustDetails-result">
+
+                  </div>
+                </div>
+
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </div>
+
+  
 
 <script src="/js/admin.js" charset="utf-8"></script>

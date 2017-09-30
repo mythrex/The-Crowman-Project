@@ -36,77 +36,59 @@
   </div>
 
   <div class="col-sm-12 col-md-6">
-    <div class="card">
-        <div class="card-header bg-accent-color">
-          History <span class="fa fa-history"></span>  
-        </div>
-        <table class="table table-striped table-resposive history-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Task</th>
-              <th>Description</th>
-              <th>CreatedAt</th>
-            </tr>
-          </thead>
-          <tbody id="counterHistoryTable">
-            
-          </tbody>
-        </table>
-      </div>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-sm-12">
+        <!--Add Counter-->
+        <div class="card">
+          <div class="card-header">
+            Add a counter
+          </div>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Fill in the details to add a counter</h6>
 
-<div class="row">
-  
-  <div class="col-sm-12 col-md-6">
-    <!--Add Counter-->
-    <div class="card">
-      <div class="card-header">
-        Add a counter
-      </div>
-      <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-muted">Fill in the details to add a counter</h6>
-
-        <form id="addCount" method="post" action="/admin/counters">
-          <div class="form-group">
-            <label for="addCount-name">Name</label>
-            <div class="input-group">
-              <div class="input-group-addon">
-                <span class="fa fa-user"></span>
+            <form id="addCount" method="post" action="/admin/counters">
+              <div class="form-group">
+                <label for="addCount-name">Name</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <span class="fa fa-user"></span>
+                  </div>
+                  <input name="counterName" type="text" class="form-control" id="addCount-name" placeholder="Counter Name">
+                </div>
               </div>
-              <input name="counterName" type="text" class="form-control" id="addCount-name" placeholder="Counter Name">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="addCount-desc">Description</label>
-            <textarea name="counterDescription" type="tel" class="form-control" id="addCount-desc" placeholder="Counter Description" row="3"></textarea>
-          </div>
-          <button id="addCount-submit" type="button" class="btn btn-accent btn-round full-width">Submit <span class="fa fa-upload"></span></button>
-        </form>
+              <div class="form-group">
+                <label for="addCount-desc">Description</label>
+                <textarea name="counterDescription" type="tel" class="form-control" id="addCount-desc" placeholder="Counter Description" row="3"></textarea>
+              </div>
+              <button id="addCount-submit" type="button" class="btn btn-accent btn-round full-width">Submit <span class="fa fa-upload"></span></button>
+            </form>
 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <!--delete counter-->
-  <div class="col-sm-12 col-md-6">
-    <div class="card">
-      <div class="card-header card-inverse bg-danger">Remove a counter <span class="fa fa-trash"></span></div>
-      <div class="card-body">
-        <div class="card-subtitle text-muted">Remove a Counter by its id</div>
+      <!--delete counter-->
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header card-inverse bg-danger">Remove a counter <span class="fa fa-trash"></span></div>
+          <div class="card-body">
+            <div class="card-subtitle text-muted">Remove a Counter by its id</div>
 
-        <form id="deleteCount">
-          <div class="form-group">
-            <input id="deleteCount-id" type="number" class="form-control">
+            <form id="deleteCount">
+              <div class="form-group">
+                <input id="deleteCount-id" type="number" class="form-control">
+              </div>
+              <button="button" id="deleteCount-submit" class="btn btn-danger full-width btn-round">Remove <span class="fa fa-trash"></span></button>
+            </form>
+
           </div>
-          <button="button" id="deleteCount-submit" class="btn btn-danger full-width btn-round">Remove <span class="fa fa-trash"></span></button>
-        </form>
-
+        </div>
       </div>
-    </div>
-  </div>
 
+    </div>
+    <!-- /.row -->
+  </div>
 </div>
-<!-- /.row -->
+
+
 
 <script src="/js/admin-counters.js" charset="utf-8"></script>

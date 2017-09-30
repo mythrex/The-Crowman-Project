@@ -1,20 +1,3 @@
-function getCountersHistory() {
-	$.get('/admin/history',{type: 'counters'}, function(data) {
-		let counterHistoryTable = $('#counterHistoryTable')
-		counterHistoryTable.empty();
-		for(index in data){
-			counterHistoryTable.append(`
-					<tr>
-		              <th scope="row">${+index + 1}</th>
-		              <td>${data[index].task}</td>
-		              <td>${data[index].desc}</td>
-		              <td>${data[index].createdAt}</td>
-		            </tr>
-				`);
-		}
-	});
-}
-
 //function to add a counter
 function addCounter() {
 	let name = $('#addCount-name').val();
@@ -56,7 +39,6 @@ function getCountersWithCustomers() {
 		for(counter of counters){
 			let customerId = counter.customerId;
 			if (customerId != null) {
-				console.log(counter);
 				let tempCounter = counter;
 				$.get('/admin/customers',{id: customerId}, function(customer) {
 					counterCardContainer.append(`
@@ -113,8 +95,6 @@ function getCountersWithCustomers() {
 
 function refreshPage(){
   getCountersWithCustomers();
-
-  getCountersHistory();
 }
 
 $(function () {
